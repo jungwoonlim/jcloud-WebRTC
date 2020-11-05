@@ -5,6 +5,8 @@ import helmet from "helmet";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import path from "path";
+import routes from "./routes";
+import webrtcRouter from "./routers/webrtcRouter";
 
 const app = express();
 
@@ -17,8 +19,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
-app.use("/", (req, res) => {
-  res.render("Home");
-});
+app.use(routes.home, webrtcRouter);
 
 export default app;
