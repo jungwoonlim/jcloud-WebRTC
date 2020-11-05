@@ -1,22 +1,22 @@
-const getCamera = document.getElementById("camera");
+const getScreenShare = document.getElementById("screenShare");
 const button = document.getElementById("startBtn");
 
 // access audio & video
 const mediaStream = {
-  audio: true,
+  audio: false,
   video: true,
 };
 
-navigator.mediaDevices.getUserMedia =
-  navigator.mediaDevices.getUserMedia ||
+navigator.mediaDevices.getDisplayMedia =
+  navigator.mediaDevices.getDisplayMedia ||
   navigator.mediaDevices.webkitGetUserMedia ||
   navigator.mediaDevices.mozGetUserMedia;
 
-const getCameraStream = (stream) => {
-  getCamera.srcObject = stream;
+const getScreenStream = (stream) => {
+  getScreenShare.srcObject = stream;
 };
 
-const getCameraError = (err) => {
+const getScreenError = (err) => {
   console.log("error :\n", err);
 
   alert("카메라와 마이크를 허용해주세요");
@@ -24,7 +24,7 @@ const getCameraError = (err) => {
 
 button.addEventListener("click", () => {
   navigator.mediaDevices
-    .getUserMedia(mediaStream)
-    .then(getCameraStream)
-    .catch(getCameraError);
+    .getDisplayMedia(mediaStream)
+    .then(getScreenStream)
+    .catch(getScreenError);
 });
