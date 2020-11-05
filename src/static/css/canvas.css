@@ -1,0 +1,10 @@
+.rtc__container {
+  width: 800px;
+  height: auto;
+}
+
+.rtc__container video {
+  width: 800px;
+  height: auto;
+  background-color: black;
+}

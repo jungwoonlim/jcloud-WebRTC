@@ -1,5 +1,6 @@
 const getScreenShare = document.getElementById("screenShare");
 const button = document.getElementById("startBtn");
+const backBtn = document.getElementById("backSelect");
 
 // access audio & video
 const mediaStream = {
@@ -27,4 +28,8 @@ button.addEventListener("click", () => {
     .getDisplayMedia(mediaStream)
     .then(getScreenStream)
     .catch(getScreenError);
+});
+
+backBtn.addEventListener("click", () => {
+  location.href = "/";
 });

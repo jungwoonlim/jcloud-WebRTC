@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/rtc.css">
     <title><%= title %></title>
 </head>
 <body>
-    <h1><%= title %></h1>
-    <video id="screenShare" autoplay muted playsinline></video>
-    <button id="startBtn">WebRTC Start</button>
+    <div class="title">
+        <h1><%= title %></h1>
+    </div>
+    <div class="rtc__container">
+        <video id="screenShare" autoplay muted playsinline></video>
+    </div>
+    <div class="nav__container">
+        <div class="nav__btn">
+            <button id="startBtn">WebRTC Start</button>
+            <button id="stopBtn">WebRTC Stop</button>
+            <button id="backSelect">Go select page</button>
+        </div>
+    </div>
 
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>

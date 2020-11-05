@@ -1,5 +1,6 @@
 const getCamera = document.getElementById("camera");
 const button = document.getElementById("startBtn");
+const backBtn = document.getElementById("backSelect");
 
 // access audio & video
 const mediaStream = {
@@ -27,4 +28,8 @@ button.addEventListener("click", () => {
     .getUserMedia(mediaStream)
     .then(getCameraStream)
     .catch(getCameraError);
+});
+
+backBtn.addEventListener("click", () => {
+  location.href = "/";
 });
